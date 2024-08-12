@@ -1,3 +1,9 @@
+body{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
 .header-superior {
     background-color: #E1EED0;
     height: 5rem;
@@ -9,6 +15,7 @@
     height: 6.25rem;
     display: flex;
     flex-direction: row;
+    box-shadow: 5px 15px 15px -10px rgba(0,0,0,0.5);
 }
 
 .header-contatos {
@@ -25,6 +32,10 @@
     display: flex;
     flex-direction: row;
     font-size: 1.25rem;
+}
+
+main {
+    height: 187.5rem;
 }
 
 ul {
