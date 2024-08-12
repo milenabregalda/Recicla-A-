@@ -36,6 +36,9 @@ footer {
     background-color: #000000;
     color: white;
     height: 25rem;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
 }
 
 a:link, a:visited, a:hover {
