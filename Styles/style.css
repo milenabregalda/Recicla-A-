@@ -1,7 +1,44 @@
 .header-superior {
     background-color: #E1EED0;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
 }
 
 .header-inferior {
-    background-color: ;
+    height: 6.25rem;
+}
+
+.header-contatos {
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.25rem;
+    background-color: #133700;
+    background-size: 3rem;
+}
+
+.header-lista {
+    color: #0F1035;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.25rem;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.5rem;
+    list-style-type: none;
+}
+
+footer {
+    background-color: #000000;
+    color: white;
+    height: 25rem;
+}
+
+a:link, a:visited, a:hover {
+    color: #133700;
+    text-decoration: none;
 }
