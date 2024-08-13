@@ -16,6 +16,8 @@ body{
     display: flex;
     flex-direction: row;
     box-shadow: 5px 15px 15px -10px rgba(0,0,0,0.5);
+    justify-content: space-between; /* Alinha o conteúdo no início e no final */
+    align-items: center; /* Centraliza verticalmente os itens */
 }
 
 .header-contatos {
@@ -38,11 +40,24 @@ main {
     height: 187.5rem;
 }
 
-ul {
+.header-menu {
     display: flex;
     flex-direction: row;
     font-size: 1.5rem;
     list-style-type: none;
+    justify-content: flex-end;
+}
+
+.header-menu li {
+    margin-right: 1rem;
+    font-family: Helvetica, Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+.logo-imagem {
+    padding: 1rem;
 }
 
 footer {
@@ -54,7 +69,15 @@ footer {
     flex-direction: row;
 }
 
-a:link, a:visited, a:hover {
-    color: #133700;
+a {
+    color: #0F1035;
     text-decoration: none;
+}
+
+a:visited {
+    color: #0F1035;
+}
+
+a:hover {
+    color: #226100;
 }
