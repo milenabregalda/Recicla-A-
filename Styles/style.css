@@ -12,6 +12,7 @@ body{
 }
 
 .header-inferior {
+    background-color: #E1EED0;
     height: 6.25rem;
     display: flex;
     flex-direction: row;
@@ -37,7 +38,10 @@ body{
 }
 
 main {
-    height: 187.5rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    background-color: #E1EED0;
+    padding: 1rem;
 }
 
 .header-menu {
@@ -88,4 +92,20 @@ a:hover {
     border-radius: 4.5%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.conteudo-pagina {
+    padding: 1.5rem;
+}
+
+.conteudo-pagina h2 {
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.conteudo-pagina p, li {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: justify;
+    font-size: 0.9rem;
 }
