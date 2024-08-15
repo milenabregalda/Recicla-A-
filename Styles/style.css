@@ -50,22 +50,9 @@ main {
     padding: 1rem;
 }
 
-footer {
-    background-color: #000000;
-    color: white;
-    height: 25rem;
-    font-size: 1.5rem;
-    display: flex;
-    flex-direction: row;
-}
-
 a {
     color: #0F1035;
     text-decoration: none;
-}
-
-a:visited {
-    color: #0F1035;
 }
 
 a:hover {
@@ -94,4 +81,46 @@ a:hover {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: justify;
     font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    min-height: 350px;
+    max-height: 500px;
+    margin: -10px -8px -10px -10px;
+    background-color: #133700;
+    box-shadow: 8px 8px 8px 8px black;
+    border: solid 1px black;
+    text-align: center;
+}
+
+footer a {
+    padding-left: 5px;
+    padding-right: 5px;
+    color: black;
+}
+
+footer hr {
+    width: 20%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+    border: solid 1px white;
+    background-color: white;
+}
+
+footer p {
+    line-height: 5px;
+    padding-top: 2px;
+    text-align: center;
+    text-indent: 20pt;
+    color: white;
+    display: inline-block;
+    font-size: 1.25rem;
 }
