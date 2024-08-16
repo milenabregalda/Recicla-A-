@@ -27,6 +27,8 @@ a:hover {
 #botao-acessibilidade {
     border: none;
     box-shadow: none;
+    position: absolute;
+    left: 13%;
 }
 
 /* Header */
