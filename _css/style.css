@@ -87,12 +87,20 @@ main section h2 {
     font-family: Helvetica, Arial, sans-serif;
     text-align: center;
     padding-bottom: 1rem;
+    font-size: 2em;
+}
+
+.conteudo-pagina h3 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.4em;
+    padding-top: 0.5em;
 }
 
 main section p, main section li {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: justify;
-    font-size: 0.9em;
+    font-size: 1em;
+    margin-bottom: 0.4em;
 }
 
 /* Footer */
