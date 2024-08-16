@@ -3,7 +3,6 @@ body{
     padding: 0;
     margin: 0;
     width: 100%;
-    font-size: 20px;
 }
 
 a {
@@ -40,6 +39,10 @@ header div {
     box-shadow: 5px 15px 15px -10px rgba(0,0,0,0.5);
     justify-content: space-between; /* Alinha o conteúdo no início e no final */
     align-items: center; /* Centraliza verticalmente os itens */
+}
+
+header a {
+    font-size: 20px;
 }
 
 header img {
