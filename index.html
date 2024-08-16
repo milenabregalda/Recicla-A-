@@ -9,7 +9,46 @@
     <link rel="stylesheet" type="text/css" href="_css/style.css">
     <script src="_js/acessibilidade.js"></script>
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script src="_js/carrossel.js"></script>
+    <!--<script src="_js/carrossel.js"></script>-->
+    <script>
+        // Lista de imagens a serem exibidas
+let vtBanner = ["../_imgs/eletronico.jpg", "../_imgs/eletronico2.png", "../_imgs/eletronico3.png"];
+let max = vtBanner.length - 1;
+let i = 0;
+
+$("#btnAnte").prepend($('<img>', {src: '../_imgs/eletronico.jpg' }));
+$("#btnProx").prepend($('<img>', {src: '../_imgs/eletronico3.png'}));
+// quando a gente chama o css no js, as propriedades que tem palavras compostas tira o hifen e coloca a letra maiuscula, colocando a palabra em camelCase.
+$("#banner").css("backgroundImage", "url(" + vtBanner[0] + ")");
+
+$("#btnAnte").click(function () {
+    troca(-1);
+})
+
+$("#btnProx").click(function () {
+    troca(1);
+})
+setInterval(() => troca(1), 5000)
+
+function troca(opr) {
+    $("#banner").css("backgroundImage", "url(" + vtBanner[i] + ")").fadeIn(1000, function () {
+        i += opr;
+        if (i > max) {
+            i = 0;
+        } else if (i < 0) {
+            i = max;
+        }
+        $("#banner").css("backgroundImage", "url(" + vtBanner[i] + ")").fadeIn(1000);
+        $("#b" + i).prop("checked", true);
+    });
+}
+
+$("input[name='banners']").click(function () {
+    let getNumber = $("input[name='banners']:checked").val()
+    console.log(getNumber)
+    $("#banner").css("backgroundImage", "url(" + vtBanner[getNumber] + ")").fadeIn(1000);
+})
+    </script>
 </head>
 
 <body class="acessibilidade">
@@ -31,9 +70,20 @@
     </header>
 
     <!--<img src="_imgs/eletronico.jpg" id="imagem-principal" alt="Imagem de eletrônico">-->
-    <div id="banner"></div>
+
+    <div id="banner">
+        <img src="_imgs/eletronico.jpg" class="banner-image" alt="Imagem 1"><img src="_imgs/eletronico2.png" class="banner-image" alt="Imagem 2"><img src="_imgs/eletronico3.png" class="banner-image" alt="Imagem 3">
+    </div>
+    
+    <button id="btnAnte"> >> </button>
+    <button id="btnProx"> << </button>
+
+    <!--<br><br><br><br><br>
+    <div id="banner">
+        
     <button id="btnAnte">Anterior</button>
     <button id="btnProx">Próximo</button>
+    <br><br><br><br><br>-->
 
     <main>
         <section>
