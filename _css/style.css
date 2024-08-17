@@ -22,6 +22,14 @@ a:hover {
     left: 13%;
 }
 
+#botao-acessibilidade button {
+    padding: 0.2rem;
+    color: white;
+    background: #777a77;
+    border-style: none;
+    border-radius: 30%;
+}
+
 #banner {
     width: 100%;
     height: 41.5rem; /* Altura fixa para imagem não duplicar */
