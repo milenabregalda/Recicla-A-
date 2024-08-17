@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Recicla Aí - Por quê?</title>
-        <link rel="icon" href="_imgs/icone-recicla-ai.png" type="image/x-icon">
-        <link rel="stylesheet" type="text/css" href="_css/style.css">
-        <script src="_js/acessibilidade.js"></script>
-    </head>
 
-    <body class="acessibilidade">
-        <header>
-            <div>
-                <img src="_imgs/logo-atualizado.png" alt="Ícone do logo da empresa">
-                <div id="botao-acessibilidade">
-                    <button onclick="aumentarFonte()">A+</button>
-                    <button onclick="diminuirFonte()">A-</button>
-                </div>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="o-que-e-descarte.html">O que é o Descarte Eletrônico</a></li>
-                    <li><a href="por-que-descartar.html">Por que descartar corretamente?</a></li>
-                    <li><a href="como-e-onde.html">Como e onde descartar</a></li>
-                    <li><a href="sobre-nos.html">Sobre nós</a></li>
-                </ul>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recicla Aí - Por quê?</title>
+    <link rel="icon" href="_imgs/icone-recicla-ai.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="_css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="_js/acessibilidade.js"></script>
+    <script src="_js/carrossel-imagens.js"></script>
+</head>
+
+<body class="acessibilidade">
+    <header>
+        <div>
+            <img src="_imgs/logo-atualizado.png" alt="Ícone do logo da empresa">
+            <div id="botao-acessibilidade">
+                <button onclick="aumentarFonte()">A+</button>
+                <button onclick="diminuirFonte()">A-</button>
             </div>
-        </header>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="o-que-e-descarte.html">O que é o Descarte Eletrônico</a></li>
+                <li><a href="por-que-descartar.html">Por que descartar corretamente?</a></li>
+                <li><a href="como-e-onde.html">Como e onde descartar</a></li>
+                <li><a href="sobre-nos.html">Sobre nós</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div id="banner">
+        <img src="_imgs/eletronico.jpg" class="banner-image" alt="Imagem 1 de eletrônicos no carrossel" style="display: block;">
+        <img src="_imgs/eletronico2.png" class="banner-image" alt="Imagem 2 de eletrônicos no carrossel" style="display: none;">
+        <img src="_imgs/eletronico3.png" class="banner-image" alt="Imagem 3 de eletrônicos no carrossel" style="display: none;">
+        <button id="btnAnte">&laquo;</button>
+        <button id="btnProx">&raquo;</button>
+    </div>
 
         <main>
             <section class="conteudo-pagina">
@@ -62,6 +73,14 @@
                 <a href="#">- Voltar ao Topo -</a>
             </div>
         </footer>
-        
-    </body>
+        <!-- VLIBRAS -->
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script> <!-- NÃO MODIFICAR DE LUGAR, dá erros de script -->
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+        <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+</body>
 </html>
