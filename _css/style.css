@@ -15,19 +15,58 @@ a:hover {
 }
 
 /* IDs */
-#imagem-principal {
-    padding: 1rem;
-    width: 99%;
-    border-radius: 4.5%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 #botao-acessibilidade {
     border: none;
     box-shadow: none;
     position: absolute;
     left: 13%;
+}
+
+#banner {
+    width: 100%;
+    height: 41.5rem; /* Altura fixa para imagem não duplicar */
+    overflow: hidden; /* Para imagens fora do container serem ocultas */
+    position: relative;
+}
+
+/* Classes */
+.banner-image {
+    padding: 1rem;
+    width: 99%;
+    border-radius: 4.5%;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+    position: relative;
+    display: none;
+    top: 0;
+    left: 0;
+}
+
+.banner-image:first-child {
+    display: block;
+}
+
+#btnAnte, #btnProx {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Para centralizar verticalmente */
+    background-color: rgba(0, 0, 0, 0);
+    color: #202025;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 10; /* Para que os botões fiquem acima das imagens */
+    font-size: 4rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#btnAnte {
+    left: 2rem; /* Ajuste conforme necessário */
+}
+
+#btnProx {
+    right: 1rem; /* Ajuste conforme necessário */
 }
 
 /* Header */
@@ -39,6 +78,10 @@ header div {
     box-shadow: 5px 15px 15px -10px rgba(0,0,0,0.5);
     justify-content: space-between; /* Alinha o conteúdo no início e no final */
     align-items: center; /* Centraliza verticalmente os itens */
+}
+
+header {
+    margin-bottom: 0.5em;
 }
 
 header a {
@@ -75,7 +118,6 @@ header li {
 
 /* Main */
 main {
-    margin-top: 2rem;
     margin-bottom: 3rem;
     background-color: #E1EED0;
     padding: 1rem;
@@ -117,7 +159,7 @@ footer {
     min-height: 350px;
     max-height: 500px;
     margin: -15px -15px -15px -15px;
-    background-color: #133700;
+    background-color: #1b421a;
     box-shadow: 8px 8px 8px 8px black;
     border: solid 1px black;
     text-align: center;
