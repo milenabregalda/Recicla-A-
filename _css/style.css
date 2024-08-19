@@ -132,6 +132,36 @@ a:hover {
     color: rgb(28, 34, 28);
 }
 
+.conteudo-pagina h3, .conteudo-pagina-porque h3 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.4em;
+    padding-top: 0.5em;
+}
+
+.conteudo-pagina-porque {
+    align-self: center;
+    margin: 0 auto;
+    width: 65%;
+}
+
+.conteudo-pagina-porque .topico {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.conteudo-pagina-porque img {
+    width: 50%;
+    margin-right: 20px;
+    max-width: 500px;
+    border: outset #246600;
+}
+
+.conteudo-pagina-porque .topico .texto {
+    margin-left: 30px;
+    width: 50%;
+}
+
 /* Header */
 header div {
     background-color: #E1EED0;
@@ -196,12 +226,6 @@ main section h2 {
     text-align: center;
     padding-bottom: 1rem;
     font-size: 2em;
-}
-
-.conteudo-pagina h3 {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 1.4em;
-    padding-top: 0.5em;
 }
 
 main section p, main section li {
