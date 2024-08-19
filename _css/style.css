@@ -60,6 +60,26 @@ a:hover {
 }
 
 /* Classes */
+.card-imagem {
+    display: inline-block;
+    margin-top: 30px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+}
+
+.card-imagem img {
+    float: inline-start;
+    margin-right: 15px;
+    padding: 10px;
+    background-color: white;
+    border: outset #246600;
+}
+
+.card-imagem p {
+    float: inline-start
+}
+
 .banner-image {
     padding: 1rem;
     width: 99%;
