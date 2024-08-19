@@ -238,6 +238,16 @@ main section h2 {
     font-size: 2em;
 }
 
+.conteudo-pagina h3 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.4em;
+    padding-top: 0.5em;
+}
+
+.conteudo-pagina iframe {
+    float: right;
+}
+
 main section p, main section li {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: justify;
