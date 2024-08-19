@@ -59,6 +59,11 @@ a:hover {
     right: 1rem; /* Ajuste conforme necessário */
 }
 
+#contatos, #voltarTopo, #mapa, #redes {
+    flex-grow: 1;
+    width: 100%;
+}
+
 /* Classes */
 .card-imagem {
     display: inline-block;
@@ -127,6 +132,11 @@ a:hover {
 .card-sobre-nos .informacao-card h3 {
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(47, 58, 47);
+}
+
+.mapa {
+    display: block;
+    border: groove #246600;
 }
 
 /* Header */
@@ -217,12 +227,15 @@ footer {
     bottom: 0px;
     left: 0px;
     min-height: 350px;
-    max-height: 500px;
+    max-height: 900px;
     margin: -15px -15px -15px -15px;
     background-color: #1b421a;
     box-shadow: 8px 8px 8px 8px black;
     border: solid 1px black;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    vertical-align: middle;
 }
 
 footer a {
