@@ -1,3 +1,3 @@
-Olá. Eu me chamo Gabriel, desenvolvedor Júnior e este projeto foi desenvolvido em parceria com as desenvolvedoras Milena e Laís, com parte de um exercício realizado durante nosso estudo acadêmico.
+Projeto desenvolvido por Gabriel, Milena, Laís e Eduardo, como parte de uma atividade de ensino realizada durante o curso de Técnico em Desenvolvimento de Sistemas do SENAC/RS.
 
-O projeto consiste em um site que visa ajudar a sociedade como um todo em um auxílio a entrar em contato com alguma empresa que se responsabiliza em fazer o descarte eletrônico.
+Este projeto possui somente componentes Front-End, e tem como objetivo informar seus usuários da existência, importância e como realizar a reciclagem de componentes eletrônicos.
