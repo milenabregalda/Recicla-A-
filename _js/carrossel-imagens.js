@@ -8,7 +8,7 @@ $(document).ready(function() {
             executar = false;
 
             switch(opr) {
-                case -1:
+                case false:
                     {
                         clearInterval(idIntervalo);                         // Encerrar o loop de troca q já está rodando no fundo
                         idIntervalo = setInterval(() => troca(1), 7000);    // Iniciar um novo loop para trocar de imagens
@@ -24,7 +24,7 @@ $(document).ready(function() {
                         
                         break;
                     }
-                case 1:
+                case true:
                     {
                         clearInterval(idIntervalo);                         // Encerrar o loop de troca q já está rodando no fundo
                         idIntervalo = setInterval(() => troca(1), 7000);    // Iniciar um novo loop para trocar de imagens
@@ -44,14 +44,13 @@ $(document).ready(function() {
         }
     }
 
+    // Timer inicial
     var idIntervalo = setInterval(() => troca(1), 7000); // Iniciar o loop para trocar de imagens
 
-    $("#btnAnte").click(function() {
-        troca(-1);
-    });
+    // Botão Esquerdo
+    $("#btnAnte").click(() => troca(false));
 
-    $("#btnProx").click(function() {
-        troca(1);
-    });
+    // Botão Direito
+    $("#btnProx").click(() => troca(true));
 
 });
