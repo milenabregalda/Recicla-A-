@@ -1,7 +1,8 @@
 $(document).ready(function() {
+    var executar = true;
+    var idIntervalo;
     const banners = $(".banner-image");
     var bannerAtivo = 0;
-    var executar = true;
 
     function troca(opr) {
         if(executar) {
@@ -11,7 +12,7 @@ $(document).ready(function() {
                 case false:
                     {
                         clearInterval(idIntervalo);                         // Encerrar o loop de troca q já está rodando no fundo
-                        idIntervalo = setInterval(() => troca(1), 7000);    // Iniciar um novo loop para trocar de imagens
+                        idIntervalo = setInterval( (() => troca(true)), 7000);    // Iniciar um novo loop para trocar de imagens
 
                         banners.eq(bannerAtivo).fadeOut(500, () => {
                             if(bannerAtivo == 0)
@@ -19,7 +20,7 @@ $(document).ready(function() {
                             else
                                 bannerAtivo--;
 
-                            banners.eq(bannerAtivo).fadeIn(500, () => { executar = true; });
+                            banners.eq(bannerAtivo).fadeIn(500, (() => { executar = true; }) );
                         });
                         
                         break;
@@ -27,7 +28,7 @@ $(document).ready(function() {
                 case true:
                     {
                         clearInterval(idIntervalo);                         // Encerrar o loop de troca q já está rodando no fundo
-                        idIntervalo = setInterval(() => troca(1), 7000);    // Iniciar um novo loop para trocar de imagens
+                        idIntervalo = setInterval( (() => troca(true)), 7000);    // Iniciar um novo loop para trocar de imagens
 
                         banners.eq(bannerAtivo).fadeOut(500, () => {
                             if(bannerAtivo == banners.length -1)
@@ -35,7 +36,7 @@ $(document).ready(function() {
                             else
                                 bannerAtivo++;
 
-                            banners.eq(bannerAtivo).fadeIn(500, () => { executar = true; });
+                            banners.eq(bannerAtivo).fadeIn(500, (() => { executar = true; }) );
                         });
 
                         break;
@@ -45,7 +46,7 @@ $(document).ready(function() {
     }
 
     // Timer inicial
-    var idIntervalo = setInterval(() => troca(1), 7000); // Iniciar o loop para trocar de imagens
+    idIntervalo = setInterval( (() => troca(true)), 7000); // Iniciar o loop para trocar de imagens
 
     // Botão Esquerdo
     $("#btnAnte").click(() => troca(false));
