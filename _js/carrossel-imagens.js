@@ -1,7 +1,7 @@
 $(document).ready(() => {                   // Espera para o carregamento completo da página antes de executar o código
     var executar = true;                        // Flag para evitar a execução simultânea da função 'troca' 
     var idIntervalo;                            // ID do timer que troca de imagens automaticamente
-    const banners = $(".banner-image");         // Vetor das imagens no carrossel
+    const banners = $(".banner-image");         // Vetor dos elementos das imagens no carrossel
     var bannerAtivo = 0;                        // Qual imagem no vetor acima está sendo exibida
 
     /**
