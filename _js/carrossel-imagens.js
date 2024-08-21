@@ -5,7 +5,7 @@ $(document).ready(() => {                   // Espera para o carregamento comple
     var bannerAtivo = 0;                        // Qual imagem no vetor acima está sendo exibida
 
     /**
-     * Função que cuida da troca das imagens no carrossel
+     * Função que cuida da lógica de troca das imagens pelos botões do carrossel
      * @param {*} direcao Boolean: 'False' troca para a imagem anterior, 'True' troca para a próxima imagem.
      * @author Eduardo Pereira Moreira
      * @since 21/08/2024
@@ -51,6 +51,6 @@ $(document).ready(() => {                   // Espera para o carregamento comple
 
     idIntervalo = setInterval(() => troca(true), 7000);         // Inicia a execução do timer inicial de troca de imagens e guarda o seu ID
 
-    $("#btnAnte").click(() => troca(false));                    // Botão esquerdo no carrossel
-    $("#btnProx").click(() => troca(true));                     // Botão direito no carrossel
+    $("#btnAnte").click(() => troca(false));                    // Detecta se o botão esquerdo do carrossel foi pressionado. Se detectar, chama a função 'troca' com 'direcao' = false
+    $("#btnProx").click(() => troca(true));                     // Detecta se o botão direito do carrossel foi pressionado. Se detectar, chama a função 'troca' com 'direcao' = true
 });
