@@ -4,6 +4,12 @@ $(document).ready(() => {
     const banners = $(".banner-image");
     var bannerAtivo = 0;
 
+    /**
+     * Função que cuida da troca das imagens no carrossel
+     * @param {*} opr Valor booleano: 'False' troca para a imagem anterior, 'True' troca para a próxima imagem.
+     * @author Eduardo Pereira Moreira
+     * @since 21/08/2024
+     */
     function troca(opr) {
         if (executar) {
             executar = false;
@@ -45,13 +51,13 @@ $(document).ready(() => {
         }
     }
 
-    // Timer inicial
-    idIntervalo = setInterval((() => troca(true)), 7000); // Iniciar o loop para trocar de imagens
+    // Timer inicial para trocar a imagem no carrossel
+    idIntervalo = setInterval((() => troca(true)), 7000);
 
-    // Botão Esquerdo
+    // Botão Esquerdo no site
     $("#btnAnte").click(() => troca(false));
 
-    // Botão Direito
+    // Botão Direito no site
     $("#btnProx").click(() => troca(true));
 
 });
