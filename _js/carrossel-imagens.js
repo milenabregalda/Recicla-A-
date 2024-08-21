@@ -1,48 +1,46 @@
-$(document).ready(() => {
-    var executar = true;
-    var idIntervalo;
-    const banners = $(".banner-image");
-    var bannerAtivo = 0;
+$(document).ready(() => {                   // Espera para o carregamento completo da página antes de executar o código
+    var executar = true;                        // Flag para evitar a execução simultânea da função 'troca' 
+    var idIntervalo;                            // ID do timer que troca de imagens automaticamente
+    const banners = $(".banner-image");         // Vetor das imagens no carrossel
+    var bannerAtivo = 0;                        // Qual imagem no vetor acima está sendo exibida
 
     /**
      * Função que cuida da troca das imagens no carrossel
-     * @param {*} opr Valor booleano: 'False' troca para a imagem anterior, 'True' troca para a próxima imagem.
+     * @param {*} direcao Boolean: 'False' troca para a imagem anterior, 'True' troca para a próxima imagem.
      * @author Eduardo Pereira Moreira
      * @since 21/08/2024
      */
-    function troca(opr) {
-        if (executar) {
-            executar = false;
+    function troca(direcao) {
+        if (executar) {                                                                 // Verifica se esta função foi chamada e ainda está em execução
+            executar = false;                                                           // Sinaliza que esta função não pode ser executada novamente (por enquanto)
 
-            switch (opr) {
-                case false:
-                    {
-                        clearInterval(idIntervalo);                                 // Encerrar o loop de troca que já está rodando no fundo
-                        idIntervalo = setInterval((() => troca(true)), 7000);      // Iniciar um novo loop para trocar de imagens
+            switch (direcao) {
+                case false: {                                                               // 'Case' que define a troca para a imagem anterior
+                        clearInterval(idIntervalo);                                             // Encerra o timer de troca que já está rodando
+                        idIntervalo = setInterval(() => troca(true), 7000);                     // Inicia um novo timer para a troca de imagens automática e guarda o seu ID
 
-                        banners.eq(bannerAtivo).fadeOut(500, () => {
+                        banners.eq(bannerAtivo).fadeOut(500, () => {                                // Faz sumir a imagem atual no carrossel
                             if (bannerAtivo == 0)
                                 bannerAtivo = banners.length - 1;
                             else
                                 bannerAtivo--;
 
-                            banners.eq(bannerAtivo).fadeIn(500, (() => { executar = true; }));
+                            banners.eq(bannerAtivo).fadeIn(500, () => executar = true);             // Faz surgir a imagem anterior no carrossel e sinaliza que essa função pode ser executada novamente
                         });
 
                         break;
                     }
-                case true:
-                    {
-                        clearInterval(idIntervalo);                                 // Encerrar o loop de troca que já está rodando no fundo
-                        idIntervalo = setInterval((() => troca(true)), 7000);      // Iniciar um novo loop para trocar de imagens
+                case true: {                                                                // 'Case' que define a troca para a próxima imagem
+                        clearInterval(idIntervalo);                                             // Encerra o timer de troca que já está rodando
+                        idIntervalo = setInterval(() => troca(true), 7000);                     // Inicia um novo timer para a troca de imagens automática e guarda o seu ID
 
-                        banners.eq(bannerAtivo).fadeOut(500, () => {
+                        banners.eq(bannerAtivo).fadeOut(500, () => {                                // Faz sumir a imagem atual no carrossel
                             if (bannerAtivo == banners.length - 1)
                                 bannerAtivo = 0;
                             else
                                 bannerAtivo++;
 
-                            banners.eq(bannerAtivo).fadeIn(500, (() => { executar = true; }));
+                            banners.eq(bannerAtivo).fadeIn(500, () => executar = true);             // Faz surgir a próxima imagem no carrossel e sinaliza que essa função pode ser executada novamente
                         });
 
                         break;
@@ -51,13 +49,8 @@ $(document).ready(() => {
         }
     }
 
-    // Timer inicial para trocar a imagem no carrossel
-    idIntervalo = setInterval((() => troca(true)), 7000);
+    idIntervalo = setInterval(() => troca(true), 7000);         // Inicia a execução do timer inicial de troca de imagens e guarda o seu ID
 
-    // Botão Esquerdo no site
-    $("#btnAnte").click(() => troca(false));
-
-    // Botão Direito no site
-    $("#btnProx").click(() => troca(true));
-
+    $("#btnAnte").click(() => troca(false));                    // Botão esquerdo no carrossel
+    $("#btnProx").click(() => troca(true));                     // Botão direito no carrossel
 });
