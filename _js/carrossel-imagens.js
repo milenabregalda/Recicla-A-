@@ -1,8 +1,50 @@
 $(document).ready(function() {
-    // Para que o código só seja executado quando o DOM do HTML for carregado
-    let i = 0;
-    let $banners = $("#banner .banner-image");
-    let max = $banners.length - 1;
+    const banners = $(".banner-image");
+    var bannerAtivo = 0;
+    var executar = true;
+
+    function troca(opr) {
+        if(executar) {
+            executar = false;
+
+            switch(opr) {
+                case -1:
+                    {
+                        clearInterval(idIntervalo);                         // Encerrar o loop de troca q já está rodando no fundo
+                        idIntervalo = setInterval(() => troca(1), 7000);    // Iniciar um novo loop para trocar de imagens
+
+                        banners.eq(bannerAtivo).fadeOut(500, () => {
+                            if(bannerAtivo == 0)
+                                bannerAtivo = banners.length -1;
+                            else
+                                bannerAtivo--;
+
+                            banners.eq(bannerAtivo).fadeIn(500, () => { executar = true; });
+                        });
+                        
+                        break;
+                    }
+                case 1:
+                    {
+                        clearInterval(idIntervalo);                         // Encerrar o loop de troca q já está rodando no fundo
+                        idIntervalo = setInterval(() => troca(1), 7000);    // Iniciar um novo loop para trocar de imagens
+
+                        banners.eq(bannerAtivo).fadeOut(500, () => {
+                            if(bannerAtivo == banners.length -1)
+                                bannerAtivo = 0;
+                            else
+                                bannerAtivo++;
+
+                            banners.eq(bannerAtivo).fadeIn(500, () => { executar = true; });
+                        });
+
+                        break;
+                    }
+            }
+        }
+    }
+
+    var idIntervalo = setInterval(() => troca(1), 7000); // Iniciar o loop para trocar de imagens
 
     $("#btnAnte").click(function() {
         troca(-1);
@@ -12,21 +54,4 @@ $(document).ready(function() {
         troca(1);
     });
 
-    setInterval(() => troca(1), 7000); // Intervalo para trocar de imagens
-
-    function troca(opr) {
-        // Ocultar todas as imagens primeiro para certificar que aparecerá somente uma imagem por vez
-        $banners.hide(); 
-        
-        // Depois, realizar a animação para a imagem atual
-        $banners.eq(i).fadeOut(500, function() { // Tempo para animação para uma imagem desaparecer
-            i += opr;
-            if (i > max) {
-                i = 0;
-            } else if (i < 0) {
-                i = max;
-            }
-            $banners.eq(i).fadeIn(700); // Tempo para animação para uma imagem aparecer
-        });
-    }
 });
