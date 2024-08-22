@@ -1,3 +1,16 @@
-Projeto desenvolvido por Gabriel, Milena, Laís e Eduardo, como parte de uma atividade de ensino realizada durante o curso de Técnico em Desenvolvimento de Sistemas do SENAC/RS.
+# recicla-ai
 
-Este projeto possui somente componentes Front-End, e tem como objetivo informar seus usuários da existência, importância e como realizar a reciclagem de componentes eletrônicos.
+O Recicla Aí é um site informativo desenvolvido como Projeto Integrador de Front-end do curso Técnico em Desenvolvimento de Sistemas do Senac-RS. O objetivo do site é conscientizar o público sobre a importância da reciclagem de eletrônicos, fornecendo informações sobre o que é o descarte, por que ele é importante, e como e onde descartar corretamente esses resíduos.
+
+## Tecnologias Utilizadas
+
+- HTML5: Estruturação do conteúdo
+- CSS3: Estilização das páginas
+- JavaScript: Interatividade do site
+- jQuery: Manipulação do DOM
+
+## Colaboradores
+
+- [Eduardo Pereira Moreira](https://github.com/ProfBlack3342)
+- [Milena Fontana Bregalda](https://github.com/milenabregalda)
+- [Gabriel Concli](https://github.com/gconcli)
