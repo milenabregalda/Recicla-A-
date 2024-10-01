@@ -16,9 +16,10 @@ a:hover {
 
 /* IDs */
 #botao-acessibilidade {
+    display: flex;
+    gap: 0.5rem;
     border: none;
     box-shadow: none;
-    position: absolute;
     left: 13%;
 }
 
@@ -65,6 +66,8 @@ a:hover {
     width: 100%;
 }
 
+
+
 /* Classes */
 .card-imagem {
     display: inline-block;
@@ -97,6 +100,8 @@ a:hover {
     display: none;
     top: 0;
     left: 0;
+    position: relative;
+    z-index: 1; /* Definir z-index baixo para o carrossel */
 }
 
 .banner-image:first-child {
@@ -173,15 +178,32 @@ a:hover {
     border: groove #246600;
 }
 
+.botao-sessao {
+    border: none;
+    padding: 0.3rem;
+    font-size: 0.9em;
+    margin: 0.2rem 0.2rem 0.2rem 0;
+    background-color: #246600;
+    border-radius: 10%;
+    color: rgb(226, 226, 226);
+}
+
 /* Header */
 header div {
     background-color: #E1EED0;
     height: 6.25rem;
+    padding: 0 2rem;
     display: flex;
     flex-direction: row;
     box-shadow: 5px 15px 15px -10px rgba(0,0,0,0.5);
     justify-content: space-between; /* Alinha o conteúdo no início e no final */
     align-items: center; /* Centraliza verticalmente os itens */
+}
+
+header div img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 header {
@@ -249,11 +271,53 @@ main section h2 {
     float: right;
 }
 
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.form-container .botao-sessao {
+    width: 100%;
+    border-radius: 4%;
+    margin-left: 0.5rem;
+    margin-top: 0.3rem;
+}
+
+.form-container a {
+    font-size: 0.8em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 0.4rem;
+}
+
+main h3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.2em;
+}
+
 main section p, main section li {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: justify;
     font-size: 1em;
     margin-bottom: 0.4em;
+}
+
+label {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+input {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.9em;
+    padding: 0.2rem;
+    margin: 0.2rem;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+h3 a {
+    color: rgb(45, 54, 40);
 }
 
 /* Footer */
@@ -301,6 +365,10 @@ footer p {
     font-size: 1.25rem;
 }
 
+#menu-hamburguer {
+    display: none;
+}
+
 /* Media Queries */
 @media (max-width: 900px) {
     .container-cards {
@@ -308,4 +376,47 @@ footer p {
     }
 }
 
-/* PARA FAZER: Depois, adicionar ao menu e à div do carrossel de imagens */
+@media (max-width: 1000px) {
+    #menu-hamburguer {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        padding-right: 2rem;
+        z-index: 1000; /* Garantir que o ícone também fique à frente */
+    }
+
+    /* Esconder o menu de navegação padrão */
+    header ul {
+        display: none;
+    }
+
+    /* Mostrar o menu quando o ícone de hambúrguer for clicado */
+    header ul.active {
+        margin-top: 0px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 6rem;
+        right: 0;
+        background-color: #E1EED0;
+        width: 100%;
+        text-align: right;
+        z-index: 999; /* Colocar um z-index alto */
+    }
+
+    header div {
+        flex-direction: row; /* Mantém os itens lado a lado */
+    }
+
+    /* Ajuste da logo em telas pequenas */
+    header div img {
+        width: 45%; /* Ajusta o tamanho da logo em telas pequenas */
+        height: auto;
+    }
+
+    /* Ajustar o botão de acessibilidade */
+    #botao-acessibilidade {
+        position: static; /* Remove o position absoluto */
+        margin-left: auto; /* Move os botões para o lado direito */
+    }
+}
